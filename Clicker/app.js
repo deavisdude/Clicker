@@ -1,4 +1,4 @@
-﻿angular.module('clicker', []).controller('gameCtrl', ['$scope', '$interval', function ($scope, $interval) {
+﻿angular.module('clicker', ['ui.bootstrap']).controller('gameCtrl', ['$scope', '$interval', function ($scope, $interval) {
     $scope.units = 0;
     $scope.ups = 0;
 
@@ -30,6 +30,14 @@
     $scope.quickStart = function () {
         var val = prompt("How many units?", 1000);
         $scope.units = val;
+    }
+
+    $scope.isBest = function (clicker) {
+        if (clicker == best && $scope.auto) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     $scope.addUnit = function (clickerVal) {

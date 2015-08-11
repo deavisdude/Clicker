@@ -855,6 +855,8 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\ui-bootstrap-0.13.3.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.13.3.min.js" />
     <Content Include="Scripts\version.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
