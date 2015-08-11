@@ -6,7 +6,7 @@
 
     $scope.auto = true;
 
-    $interval(function () { $scope.AutoPlay(); }, 1000/5);
+    $interval(function () { $scope.AutoPlay(); }, 1000/10);
 
     $scope.pricePercent = 1.15;
 
@@ -25,6 +25,11 @@
 
     $scope.increase = function (amount) {
         $scope.units += amount;
+    }
+
+    $scope.quickStart = function () {
+        var val = prompt("How many units?", 1000);
+        $scope.units = val;
     }
 
     $scope.addUnit = function (clickerVal) {
@@ -70,21 +75,21 @@
 
     var best = $scope.clickers.CLICK1;
     var equality = false;
-    var min = $scope.clickers.CLICK1;
+    var min = $scope.clickers.CLICK1.value;
     var init = true;
 
     $scope.AutoPlay = function () {
         if ($scope.auto) {
             if (init) {
                 for (var clicker in $scope.clickers) {
-                    if ($scope.clickers[clicker].value < min.value) {
-                        min = $scope.clickers[clicker];
+                    if ($scope.clickers[clicker].value < min) {
+                        min = $scope.clickers[clicker].value;
                     }
                 }
                 init = false;
             }
             if (!equality) {
-                if (best.value < min.value) {
+                if (best.value < min) {
                     if ($scope.getClicker(best.index + 1) != null) {
                         best = $scope.getClicker(best.index + 1);
                     } else {
